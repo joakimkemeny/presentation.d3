@@ -1,0 +1,12 @@
+{
+	"name": "presentation.d3",
+	"version": "0.1.0",
+	"private": true,
+
+	"dependencies": {
+		"font-awesome": "~4.0.3",
+		"jquery": "~2.0.3",
+		"jke-d3-calendar": "git@github.com:joakimkemeny/jke.d3.calendar.git",
+		"jke-d3-ecg": "git@github.com:joakimkemeny/jke.d3.ecg.git"
+	}
+}
