@@ -1,5 +1,5 @@
-/* global Rainbow, impress, impressConsole */
-(function ($, Rainbow, impress, impressConsole) {
+/* global Rainbow, impress, impressConsole, moment */
+(function ($, Rainbow, impress, impressConsole, moment) {
 	'use strict';
 
 	var Presentation = {
@@ -117,6 +117,30 @@
 							notes: 'Workshop'
 						}
 					];
+
+					var toTimeToday = function (time) {
+						if (time instanceof Date) {
+							return moment({ hours: time.getHours(), minutes: time.getMinutes() }).toDate();
+						} else {
+							return moment(time, 'HH:mm').toDate();
+						}
+					};
+
+					var toDay = function (date) {
+						if (date instanceof Date) {
+							return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+						} else {
+							return moment(date).toDate();
+						}
+					};
+
+					var toDateTime = function (date) {
+						if (date instanceof Date) {
+							return date;
+						} else {
+							return moment(date).toDate();
+						}
+					};
 
 					return function () {
 						try {
@@ -287,4 +311,4 @@
 		impressConsole().init('css/console.css');
 	});
 
-}($, Rainbow, impress, impressConsole));
+}($, Rainbow, impress, impressConsole, moment));
