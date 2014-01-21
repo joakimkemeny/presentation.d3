@@ -13,15 +13,55 @@ module.exports = function (grunt) {
 					outputStyle: 'compressed',
 					sassDir: 'src/scss'
 				}
+			},
+			'compile-demo2': {
+				options: {
+					cssDir: 'demo/demo2/css',
+					outputStyle: 'compressed',
+					sassDir: 'demo/demo2/src/scss'
+				}
+			},
+			'compile-demo3': {
+				options: {
+					cssDir: 'demo/demo3/css',
+					outputStyle: 'compressed',
+					sassDir: 'demo/demo3/src/scss'
+				}
 			}
 		},
 
 		// Configure the concat task to combine all libraries into one file.
 		concat: {
+			app: {
+				src: 'src/js/**/*.js',
+				dest: 'js/app.js'
+			},
+			'libs-demo': {
+				src: [
+					'bower_components/jquery/jquery.min.js',
+					'bower_components/jquery-ui/ui/minified/jquery.ui.widget.min.js',
+					'bower_components/moment/min/moment.min.js',
+					'bower_components/d3/d3.min.js',
+					'bower_components/jke-d3-calendar/dist/jke-d3-calendar.min.js',
+					'bower_components/jke-d3-ecg/dist/jke-d3-ecg.min.js'
+				],
+				dest: 'js/libs-demo.js'
+			},
 			libs: {
 				src: [
 					'bower_components/jquery/jquery.min.js',
-					'bower_components/impress.js/js/impress.js'
+					'bower_components/impress.js/js/impress.js',
+					'bower_components/moment/min/moment.min.js',
+					'bower_components/rainbow/js/rainbow.js',
+					'bower_components/rainbow/js/language/c.js',
+					'bower_components/rainbow/js/language/coffeescript.js',
+					'bower_components/rainbow/js/language/css.js',
+					'bower_components/rainbow/js/language/generic.js',
+					'bower_components/rainbow/js/language/html.js',
+					'bower_components/rainbow/js/language/java.js',
+					'bower_components/rainbow/js/language/javascript.js',
+					'bower_components/d3/d3.min.js',
+					'lib/impress.console.js'
 				],
 				dest: 'js/libs.js'
 			}
@@ -59,6 +99,7 @@ module.exports = function (grunt) {
 			src: [
 				'code/**/*',
 				'css/**/*',
+				'demo/**/*',
 				'fonts/**/*',
 				'images/**/*',
 				'js/**/*',
@@ -79,13 +120,13 @@ module.exports = function (grunt) {
 
 
 		// Configure the uglify task to concatenate and optimize all JavaScript files.
-		uglify: {
-			// TODO: Configure source maps.
-			dist: {
-				src: 'src/js/**/*.js',
-				dest: 'js/app.js'
-			}
-		},
+		//		uglify: {
+		//			// TODO: Configure source maps.
+		//			dist: {
+		//				src: 'src/js/**/*.js',
+		//				dest: 'js/app.js'
+		//			}
+		//		},
 
 		// Configure the watch task to listen to changes to relevant files and run the correct tasks.
 		watch: {
@@ -93,16 +134,20 @@ module.exports = function (grunt) {
 				livereload: true
 			},
 			compass: {
-				files: ['Gruntfile.js', 'src/scss/**/*.scss'],
+				files: ['Gruntfile.js', 'src/scss/**/*.scss', 'demo/**/*.scss'],
 				tasks: ['compass']
 			},
-			jshint: {
+			concat: {
 				files: ['Gruntfile.js', 'src/js/**/*.js'],
-				tasks: ['jshint']
+				tasks: ['concat:app']
 			},
-			uglify: {
-				files: ['Gruntfile.js', 'src/js/**/*.js'],
-				tasks: ['uglify']
+			//			uglify: {
+			//				files: ['Gruntfile.js', 'src/js/**/*.js'],
+			//				tasks: ['uglify']
+			//			},
+			jshint: {
+				files: ['Gruntfile.js', 'src/js/**/*.js', 'index.html'],
+				tasks: ['jshint']
 			}
 		}
 	});
@@ -113,11 +158,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	//	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-gh-pages');
 
 	// Aliases
-	grunt.registerTask('build', ['jshint', 'compass', 'concat', 'uglify', 'copy']);
+	grunt.registerTask('build', ['jshint', 'compass', 'concat', 'copy']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };

@@ -1,0 +1,10 @@
+$jke-ecgChart-axisColor: #ccc;
+$jke-ecgChart-xGridColor: #ccc;
+$jke-ecgChart-yGridColor: #ccc;
+
+@import "../../../../bower_components/jke-d3-ecg/src/scss/jke-d3-ecg";
+
+body {
+	margin: 0;
+	overflow: hidden;
+}

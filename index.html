@@ -13,10 +13,353 @@
 </head>
 <body>
 
-	<p>Better and more fun applications with D3.js</p>
+	<div id="impress">
 
-	<script src="js/libs.js"></script>
-	<script src="js/app.js"></script>
+		<!-- Introduction -->
+
+		<div id="intro" class="step invisible" data-x="0" data-y="0">
+			<h2>Better and more fun<br>applications with</h2>
+			<h1>D3.js</h1>
+			<h3>Joakim Kemeny</h3>
+			<h4>@joakimkemeny</h4>
+			<img src="images/callista.png" class="logotype">
+			<div class="browser browser1" data-src="demo/demo1"></div>
+
+			<div class="notes">
+				<p>
+					Hej igen och välkomna till min andra dragning här idag.
+				</p>
+				<p>
+					Ni som har varit här hela tiden idag såg mig ju prata om hur man kan tänka när man skapar en
+					arkitektur för sin moderna frontend tidigare och ni som var lite extra uppmärksamma kanske även
+					såg att jag i mina demos hade ett par komponenter som kanske inte är helt enkla att göra med vanlig
+					HTML och det är om dessa komponenter och hur jag gjorde för att bygga dem som jag har tänkt
+					prata nu.
+				</p>
+				<p>
+					Jag har valt att kalla den här dragningen "Bättre och roligare applikationer med D3.js" och min
+					förhoppning är att även om de komponenter som jag visar idag inte passar er så ska ni ändå bli
+					inspirerade till att titta närmare på hur D3 kan hjälpa era applikationer.
+				</p>
+			</div>
+		</div>
+
+		<!-- What is D3 -->
+
+		<div id="d3-1" class="step invisible" data-x="230" data-y="-255">
+			<h1>D3.js</h1>
+
+			<div class="notes">
+				<p>
+					Så vad är då D3?
+				</p>
+			</div>
+		</div>
+
+		<div id="d3-2" class="step invisible" data-x="230" data-y="-255">
+			<h1>D3.js</h1>
+			<div class="box ballon ballon-down ballon1">
+				<span>“</span><b>D3.js</b> is a JavaScript library for<br>manipulating documents based on
+				data.<span>”</span>
+			</div>
+
+			<div class="notes">
+				<p>
+					Om man går in på deras hemsida så kan man läsa följande: "D3.js is a JavaScript library for
+					manipulating documents based on data". Ok, kanske inte så spännande men vi läser väl vidare.
+				</p>
+			</div>
+		</div>
+
+		<div id="d3-3" class="step invisible" data-x="230" data-y="-255">
+			<h1>D3.js</h1>
+			<div class="box ballon ballon-down ballon1">
+				<span>“</span><b>D3.js</b> is a JavaScript library for<br>manipulating documents based on
+				data.<span>”</span>
+			</div>
+			<div class="box ballon ballon-up ballon2">
+				<span>“</span><b>D3</b> helps you bring data to life<br>using HTML, SVG and CSS.<span>”</span>
+			</div>
+
+			<div class="notes">
+				<p>
+					D3 helps you bring data to life using HTML, SVG and CSS".
+				</p>
+				<p>
+					Så det här är vad det handlar om. D3 är ett JavaScript bibliotek för att visualisera data på olika
+					sätt och tanken med det är att det ska bli enklare att förstå data när man ser det och det ska bli
+					roligare att jobba med det.
+				</p>
+				<p>
+					Idag tänkte jag försöka visa er hur det kan se ut genom att kasta mig direkt in i två demos och
+					visa er hur man kan bygga komponenter med D3. Det kommer bli rätt mycket kod i ett väldigt snabbt
+					tempo och eftersom tiden är väldigt begränsad kommer jag inte förklara varje kodrad men all kod
+					finns att hämta och om man vill läsa på lite mer om D3 så finns det massor av bra resurser på
+					nätet.
+				</p>
+			</div>
+		</div>
+
+		<div id="d3-4" class="step invisible" data-x="230" data-y="-255">
+			<h1>D3.js</h1>
+			<div class="box ballon ballon-down ballon1">
+				<span>“</span><b>D3.js</b> is a JavaScript library for<br>manipulating documents based on
+				data.<span>”</span>
+			</div>
+			<div class="box ballon ballon-up ballon2">
+				<span>“</span><b>D3</b> helps you bring data to life<br>using HTML, SVG and CSS.<span>”</span>
+			</div>
+			<p class="links">
+				Free online book
+				<a href="http://alignedleft.com/work/d3-book">alignedleft.com/work/d3-book</a>
+			</p>
+
+			<div class="notes">
+				<p>
+					T.ex. den här gratisboken som ger en väldigt bra introduktion även för er som inte är så
+					bevandrade i JavaScript.
+				</p>
+				<p>
+					Jag hoppas att den här dragningen ska göra er sugna på att testa och vi får väl se om jag lyckas.
+				</p>
+				<p>
+					Dags för första demon.
+				</p>
+			</div>
+		</div>
+
+		<!-- ECG demo -->
+
+		<div id="demo-ecg" class="step invisible" data-x="1730" data-y="-255">
+			<div class="browser browser2" data-src="demo/demo2"></div>
+
+			<div class="notes">
+				<p>
+					Den här kurvan känner ni förhoppningsvis igen. Det är EKG-kurvan som jag visade förrut. I det här
+					exemplet använder jag fuskdata direkt på klienten istället för att skicka det över en WebSocket men
+					det spelar ju ingen roll här. Den här typen av kurvor är D3 rätt bra på att implementera så jag
+					tänkte vi skulle se om vi kunde återskapa den från grunden.
+				</p>
+			</div>
+		</div>
+
+		<div id="demo-ecg-live" class="step invisible" data-x="1730" data-y="210">
+			<div class="ecg-preview">
+				<div id="ecg-chart"></div>
+			</div>
+			<div class="ecg-editor">
+				<div class="code">
+					<pre class="active" data-type="html"><code data-src="code/ecg.html"></code></pre>
+					<pre data-type="data"><code data-src="code/ecg.json"></code></pre>
+					<pre data-type="css"><code data-src="code/ecg.css"></code></pre>
+					<textarea data-type="js"></textarea>
+				</div>
+				<ul class="tabs">
+					<li class="active" data-type="html">HTML</li>
+					<li data-type="css">CSS</li>
+					<li data-type="data">Data</li>
+					<li data-type="js">JS</li>
+				</ul>
+
+			</div>
+
+			<div class="notes">
+				<p>
+					För att skapa någonting i D3 så börjar man alltid med lite HTML. Här inkluderar vi D3, vi
+					inkluderar någon typ av datakälla och vi inkluderar även vår kod som vi kommer att skriva för att
+					vår kurva. Vi inkluderar även lite CSS för att den ska se bra ut och slutligen skapar vi en
+					platshållare för vår kurva. Det är här vi kommer lägga till den senare.
+				</p>
+				<p>
+					CSS koden är inte så märkvärdig. Vi sätter mest färger. Det som kan vara värt att notera är att
+					vi kommer att jobba med SVG i den här demon så därför kanske inte CSS:en ser riktigt ut som ni är
+					vana men det är helt vanlig CSS.
+				</p>
+				<p>
+					Vi behöver någon form av data att föda vår kurva med och här har vi en enkel lista med X och Y. X
+					är millisekunder och Y är själva värdet. I min tidigare demo så skickades ju dessa över en
+					WebSocket men här har vi alla punkter direkt.
+				</p>
+				<p>
+					Sen har vi då JavaScript och här börjar vi från ett blankt papper.
+				</p>
+				<p>
+					1. Det första vi måste göra är att skapa ett SVG element som vi kan skapa vår kurva i. Så vi
+					lägger till ett SVG element till vår platshållare och sätter några attribut på den. Vi kan ta
+					bort ramen här jag la mest till den för att det skulle synas.
+				</p>
+				<p>
+					2, Nästa steg är att vi skapa en grupp som vi kallar för canvas som vi kommer lägga alla element
+					i. Vi förflyttar även den lite och ni kommer strax få se varför. Sedan börjar vi rita och vi
+					börjar med en enkel bakgrund.
+				</p>
+				<p>
+					3. Nu är det dags att börjar skapa kurvan och det gör vi genom att skapa en y axel först. Det
+					första vi behöver göra är att berätta vilken typ av skala som ska användas för y axeln. I det här
+					fallet har vi en linjär skapa men det skulle likna gärna kunna vara en tidsaxel som ni kommer få
+					se sen eller en logaritmiska skala. Vi säger att den skalan ska representera -1 till 1.5 och den
+					ska sprida ut dessa på punkterna 0 till höjden på vår kurva.
+				</p>
+				<p>
+					Därefter skapar vi själva axeln och vi använder skalan och sätter lite parametrar för hur den ska
+					bete sig och slutligen lägger vi till axeln till vår SVG. Nu kan ni se att den här skapat upp
+					den första axeln här.
+				</p>
+				<p>
+					4. Nästa steg är att skapa en grid och det gör vi på samma sätt. Men vi låter ticksen vara långa
+					och gå i omvänd riktning så då blir det så här.
+				</p>
+				<p>
+					5. Vi kan göra ungefär samma grej med den x-axeln.
+				</p>
+				<p>
+					6. Nu är det dags att lägga till själva linjen. Det kan man göra genom att använda line
+					funktionen. Här kan ni se att jag skickar in x och y skalorna även här för att säga till D3 hur
+					den ska hitta punkterna för att skapa linjen. Viktigt att notera är också att när jag sedan
+					lägger till linjen så skickar jag in arrayen med data som ni såg tidigare. D3 använder sedan x
+					och y funkionerna för att skapa kurvan.
+				</p>
+				<p>
+					7. Ok, det är en puls i EKG-kurvan men vi vill ju att den ska röra på sig. Låt oss skapa en ny
+					datakälla som är tom från början.
+				</p>
+				<p>
+					8. Låt oss skapa en funktion som lägger EN punkt till vår nya datakälla och därefter
+					uppdaterar vår linje. Kom ihåg att linjen har en referens tillbaka till sin datakälla så den här
+					kommer använda den för att rita om sig.
+				</p>
+				<p>
+					9. Om vi nu skapar en punktgenerator som varje gång man ber den om en ny punkt returnerar nästa
+					punkt i data arrayen som vi hade tidigare och dessutom ser till att vi börjar om från början när
+					vi kommer till slutet.
+				</p>
+
+				<p>
+					0. Då kan vi sedan uppdatera vår kurva med en ny punkt var 10:e millisekund genom kombinera dessa
+					två och nu har vi någonting som liknar en EKG-kurva.
+				</p>
+				<p>
+					+. Tyvärr har den ett litet problem eftersom vi börjar om på x-axeln men det kan vi enkelt
+					lösa genom att rensa upp så fort som x går tillbaka igen. °
+				</p>
+				<p>
+					Det var min första demo. Jag hoppas ni hängde med i flödet i alla fall även om jag inte tror att
+					riktiga alla hängde med i koden.
+				</p>
+			</div>
+		</div>
+
+		<!-- Calendar demo -->
+
+		<div id="demo-calendar" class="step invisible" data-x="1730" data-y="1300">
+			<div class="browser browser2" data-src="demo/demo3"></div>
+
+			<div class="notes">
+				<p>
+					Här är mitt andra exempel idag och det är kalendervyn från tidboken som jag visade tidigare. Här har
+					vi en veckovy och min förra demo kunde man lägga till och uppdatera bokningar och det görs
+					automatiskt i bakgrunden här. Den skalar även om sig när man byter intervall.
+				</p>
+				<p>
+					Det här är ju en lite annorlunda komponent och det kanske inte är uppenbart att man kan använda
+					D3 här men det kan man så låt oss titta på hur man gör.
+				</p>
+			</div>
+		</div>
+
+		<div id="demo-calendar-live" class="step invisible" data-x="2750" data-y="1300">
+			<div class="calendar-preview">
+				<div id="calendar"></div>
+			</div>
+
+			<div class="calendar-editor">
+				<div class="code">
+					<pre class="active" data-type="html"><code data-src="code/calendar.html"></code></pre>
+					<pre data-type="data"><code data-src="code/calendar.json"></code></pre>
+					<pre data-type="css"><code data-src="code/calendar.css"></code></pre>
+					<textarea data-type="js"></textarea>
+				</div>
+				<ul class="tabs">
+					<li class="active" data-type="html">HTML</li>
+					<li data-type="css">CSS</li>
+					<li data-type="data">Data</li>
+					<li data-type="js">JS</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<!-- Usage -->
+
+		<div id="usage-1" class="step invisible" data-x="4230" data-y="1300">
+			<div class="center">
+				<h1>What can you do?</h1>
+			</div>
+
+			<div class="notes">
+				<p>
+				</p>
+			</div>
+		</div>
+		<div id="usage-2" class="step invisible" data-x="4230" data-y="1300">
+			<div class="center">
+				<h1>What can you do?</h1>
+				<div class="box ballon ballon-down ballon1">Charts</div>
+				<div class="box ballon ballon-up ballon2">Maps</div>
+			</div>
+
+			<div class="notes">
+				<p>
+				</p>
+			</div>
+		</div>
+		<div id="usage-3" class="step invisible" data-x="4230" data-y="1300">
+			<div class="center">
+				<h1>What can you do?</h1>
+				<div class="box ballon ballon-down ballon1">Charts</div>
+				<div class="box ballon ballon-up ballon2">Maps</div>
+				<div class="box ballon ballon-down ballon3">Visualizations</div>
+				<div class="box ballon ballon-up ballon4">GUI components</div>
+			</div>
+
+			<div class="notes">
+				<p>
+				</p>
+			</div>
+		</div>
+
+		<!-- Introduction -->
+
+		<div id="outro" class="step invisible" data-x="4230" data-y="1300">
+			<h2>Better and more fun<br>applications with</h2>
+			<h1>D3.js</h1>
+			<h3>Thanks</h3>
+			<h4>github.com/callistaenterprise</h4>
+			<h4>github.com/callistaenterprise</h4>
+			<img src="images/callista.png" class="logotype">
+			<div class="browser browser1" data-src="demo/demo1"></div>
+
+			<div class="notes">
+				<p>
+					Hej igen och välkomna till min andra dragning här idag.
+				</p>
+				<p>
+					Ni som har varit här hela tiden idag såg mig ju prata om hur man kan tänka när man skapar en
+					arkitektur för sin moderna frontend tidigare och ni som var lite extra uppmärksamma kanske även
+					såg att jag i mina demos hade ett par komponenter som kanske inte är helt enkla att göra med vanlig
+					HTML och det är om dessa komponenter och hur jag gjorde för att bygga dem som jag har tänkt
+					prata nu.
+				</p>
+				<p>
+					Jag har valt att kalla den här dragningen "Bättre och roligare applikationer med D3.js" och min
+					förhoppning är att även om de komponenter som jag visar idag inte passar er så ska ni ändå bli
+					inspirerade till att titta närmare på hur D3 kan hjälpa era applikationer.
+				</p>
+			</div>
+		</div>
+
+		<script src="js/libs.js"></script>
+		<script src="js/app.js"></script>
 
 </body>
 </html>

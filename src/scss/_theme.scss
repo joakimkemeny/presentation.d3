@@ -1,0 +1,490 @@
+/*** Variables ************************************************************************************/
+
+$alternateColor: #0b58a3;
+$boxColor: #f5f5f5;
+$boxBorderColor: #bbb;
+$noteColor: #666;
+$textColor: #000;
+
+/*** General styles *******************************************************************************/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(215, 215, 215);
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+	background-image: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+	background-image: -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+	background-image: -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+	background-image: radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+	color: $textColor;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 30px;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1em;
+	margin: 0;
+}
+
+h1 {
+	font-size: 85px;
+
+	&.small {
+		font-size: 50px;
+		margin-bottom: 20px;
+	}
+
+	&.medium {
+		font-size: 100px;
+	}
+
+	&.large {
+		font-size: 150px;
+	}
+
+	&.huge {
+		font-size: 200px;
+	}
+}
+
+h2 {
+	color: $alternateColor;
+	font-size: 50px;
+
+	&.small {
+		font-size: 30px;
+	}
+}
+
+h3 {
+	font-size: 40px;
+}
+
+h4, h5, h6 {
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.center {
+	display: table;
+	height: 100%;
+	width: 100%;
+
+	& > * {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
+
+/*** Components ***********************************************************************************/
+
+.ballon {
+	position: absolute;
+	line-height: 1;
+	white-space: nowrap;
+	width: auto;
+
+	&.ballon-up:after,
+	&.ballon-up:before {
+		bottom: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		pointer-events: none;
+		position: absolute;
+		width: 0;
+	}
+
+	&.ballon-up:after {
+		border-bottom-color: $boxColor;
+		border-width: 20px;
+		left: 50%;
+		margin-left: -20px;
+	}
+
+	&.ballon-up:before {
+		border-bottom-color: $boxBorderColor;
+		border-width: 26px;
+		left: 50%;
+		margin-left: -26px;
+	}
+
+	&.ballon-down:after,
+	&.ballon-down:before {
+		top: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		pointer-events: none;
+		position: absolute;
+		width: 0;
+	}
+
+	&.ballon-down:after {
+		border-top-color: $boxColor;
+		border-width: 20px;
+		left: 50%;
+		margin-left: -20px;
+	}
+
+	&.ballon-down:before {
+		border-top-color: $boxBorderColor;
+		border-width: 26px;
+		left: 50%;
+		margin-left: -26px;
+	}
+}
+
+.box {
+	background-color: $boxColor;
+	border: 5px solid $boxBorderColor;
+	border-radius: 5px;
+	color: $alternateColor;
+	font-size: 50px;
+	padding: 20px;
+
+	span {
+		color: $noteColor;
+		font-size: 30px;
+		display: block;
+	}
+}
+
+.browser1 {
+	height: 744px;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	width: 1000px;
+
+	iframe {
+		height: 744px;
+		left: 0;
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+		width: 1000px;
+	}
+}
+
+.browser2 {
+	background-color: $boxColor;
+	border: 5px solid $boxBorderColor;
+	border-radius: 10px;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	iframe {
+		left: 10px;
+		overflow: hidden;
+		position: absolute;
+		top: 20px;
+		height: 704px;
+		width: 960px;
+	}
+}
+
+.links {
+	color: $noteColor;
+	font-size: 25px;
+	font-weight: normal;
+	position: absolute;
+	left: 40px;
+	bottom: 20px;
+
+	a {
+		color: $noteColor;
+		font-weight: bold;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.calendar-preview {
+	background-color: $boxColor;
+	border: 5px solid $boxBorderColor;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 280px;
+	bottom: 0;
+	padding: 20px;
+}
+
+.ecg-preview {
+	background-color: $boxColor;
+	border: 5px solid $boxBorderColor;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 280px;
+	padding: 20px;
+}
+
+.calendar-editor {
+	bottom: 0;
+	left: 300px;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	.code {
+		background-color: $boxColor;
+		border: 5px solid $boxBorderColor;
+		border-radius: 10px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 70px;
+		right: 0;
+		overflow: auto;
+
+		[data-type] {
+			display: none;
+			&.active {
+				display: block;
+			}
+		}
+
+		textarea {
+			font-family: 'Bitstream Vera Sans Mono', Courier, monospace;
+			font-size: 22px;
+			outline: none;
+			line-height: 1.2em;
+			border: 0;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			position: absolute;
+			padding: 20px;
+			background-color: $boxColor;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			resize: none;
+			width: 100%;
+
+		}
+	}
+
+	.tabs {
+		bottom: 0;
+		height: 70px;
+		left: 0;
+		margin: 0;
+		margin-left: 20px;
+		position: absolute;
+		right: 0;
+		padding: 0;
+
+		li {
+			background-color: transparentize($boxColor, 0.5);
+			border-left: 5px solid transparentize($boxBorderColor, 0.5);
+			border-bottom: 5px solid transparentize($boxBorderColor, 0.5);
+			list-style: none;
+			margin: 0;
+			float:left;
+			padding: 10px 20px;
+			text-align: center;
+
+			&:not(.active):hover {
+				cursor: pointer;
+				background-color: transparentize($boxColor, 0.2);
+			}
+
+			&.active {
+				background-color: $boxColor;
+				border-bottom: 5px solid $boxBorderColor;
+				border-left: 5px solid $boxBorderColor;
+				border-right: 5px solid $boxBorderColor;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				margin-top: -5px;
+			}
+			&:not(.active):last-child {
+				border-right: 5px solid transparentize($boxBorderColor, 0.5);
+			}
+		}
+
+		li.active + li {
+			border-left: 0;
+		}
+	}
+
+}
+
+.ecg-editor {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 300px;
+
+	.code {
+		background-color: $boxColor;
+		border: 5px solid $boxBorderColor;
+		border-radius: 10px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 100px;
+		overflow: auto;
+
+		[data-type] {
+			display: none;
+			&.active {
+				display: block;
+			}
+		}
+
+		textarea {
+			font-family: 'Bitstream Vera Sans Mono', Courier, monospace;
+			font-size: 22px;
+			outline: none;
+			line-height: 1.2em;
+			border: 0;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			position: absolute;
+			padding: 20px;
+			background-color: $boxColor;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			resize: none;
+			width: 100%;
+
+		}
+	}
+
+	.tabs {
+		margin: 0;
+		margin-top: 20px;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100px;
+
+		li {
+			background-color: transparentize($boxColor, 0.5);
+			border-top: 5px solid transparentize($boxBorderColor, 0.5);
+			border-right: 5px solid transparentize($boxBorderColor, 0.5);
+			list-style: none;
+			margin: 0;
+			display: block;
+			padding: 20px 10px;
+			text-align: center;
+
+			&:not(.active):hover {
+				cursor: pointer;
+				background-color: transparentize($boxColor, 0.2);
+			}
+
+			&.active {
+				background-color: $boxColor;
+				border-bottom: 5px solid $boxBorderColor;
+				border-top: 5px solid $boxBorderColor;
+				border-right: 5px solid $boxBorderColor;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				margin-left: -5px;
+			}
+			&:not(.active):last-child {
+				border-bottom: 5px solid transparentize($boxBorderColor, 0.5);
+			}
+		}
+
+		li.active + li {
+			border-top: 0;
+		}
+	}
+
+}
+
+/*** Source code **********************************************************************************/
+
+code {
+	color: $textColor;
+	font-family: 'Bitstream Vera Sans Mono', Courier, monospace;
+	font-size: 22px;
+	line-height: 1.2em;
+}
+
+pre {
+	margin: 0 0 40px 0;
+	padding: 20px;
+	word-wrap: break-word;
+
+	.comment {
+		color: #998;
+	}
+	.support {
+		color: #0086b3;
+	}
+	.tag,
+	.tag-name {
+		color: navy;
+	}
+	.keyword,
+	.css-property,
+	.vendor-prefix,
+	.sass,
+	.class,
+	.id,
+	.css-value,
+	.entity.function,
+	.storage.function {
+		font-weight: bold;
+	}
+	.css-property,
+	.css-value,
+	.vendor-prefix,
+	.support.namespace {
+		color: $textColor;
+	}
+	.constant.numeric,
+	.keyword.unit,
+	.hex-color {
+		color: #099;
+		font-weight: normal;
+	}
+	.entity.class {
+		color: #458;
+	}
+	.entity.id,
+	.entity.function {
+		color: #900;
+	}
+	.attribute,
+	.variable {
+		color: teal;
+	}
+	.string,
+	.support.value {
+		font-weight: normal;
+		color: #d14;
+	}
+	.regexp {
+		color: #009926;
+	}
+}

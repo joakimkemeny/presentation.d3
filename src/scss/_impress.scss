@@ -1,0 +1,64 @@
+/*** Enable clicking on elements 'hiding' behind body in 3D ***************************************/
+
+body {
+	pointer-events: none;
+}
+
+#impress {
+	pointer-events: auto;
+}
+
+/*** Step *****************************************************************************************/
+
+.step {
+	height: 744px;
+	padding: 40px;
+	position: relative;
+	transition: opacity linear 1s;
+	width: 1000px;
+
+	&:not(.active) {
+		opacity: 0.3;
+
+		&.invisible {
+			opacity: 0.0;
+		}
+
+		&.opaque {
+			opacity: 1.0;
+		}
+	}
+}
+
+.notes {
+	display: none;
+}
+
+/*** Overview step ********************************************************************************/
+
+#overview {
+	padding: 0;
+	z-index: -1;
+}
+
+.impress-on-overview {
+
+	.step,
+	.step:not(.active) {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
+
+/*** Show navigation hints ************************************************************************/
+
+.hint {
+	div {
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 20px;
+		color: #eee;
+		margin: 20px auto 0;
+		padding: 20px 40px;
+		width: 600px;
+	}
+}

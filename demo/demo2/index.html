@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>jke-d3-ecg</title>
+
+	<link rel="stylesheet" href="css/demo.css">
+
+</head>
+<body>
+
+	<!-- Placeholder for the ECG chart -->
+	<div class="jke-ecgChart"></div>
+
+	<!-- Include dependencies, including jke-d3-ecg -->
+	<script src="../../js/libs-demo.js"></script>
+
+	<!-- Initialize the chart -->
+	<script>
+		$('.jke-ecgChart').ecgChart({
+			width: 960,
+			height: 704
+		});
+	</script>
+
+	<!-- Include a data source to feed the ECG chart with data -->
+	<!-- In a real application this should probably be done using a WebSocket -->
+	<script src="js/datasource.js"></script>
+
+</body>
+</html>

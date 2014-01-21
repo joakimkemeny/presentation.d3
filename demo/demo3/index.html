@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>jke-d3-calendar</title>
+
+	<link rel="stylesheet" href="css/demo.css">
+
+</head>
+<body>
+
+	<!-- Placeholder for the calendar -->
+	<div class="jke-calendar"></div>
+
+	<!-- Include dependencies, including jke-d3-calendar -->
+	<script src="../../js/libs-demo.js"></script>
+
+	<!-- Initialize the calendar -->
+	<script>
+		$('.jke-calendar').calendar({
+
+			width: 1000,
+			height: 748,
+			startDate: '2014-01-27',
+			endDate: '2014-01-31'
+		});
+	</script>
+
+	<!-- Include a data source to feed the calendar with data -->
+	<script src="js/datasource.js"></script>
+
+</body>
+</html>

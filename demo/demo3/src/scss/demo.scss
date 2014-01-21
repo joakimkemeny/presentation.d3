@@ -1,0 +1,11 @@
+$jke-calendar-axisColor: #ccc;
+$jke-calendar-backgroundColor: #f5f5f5;
+$jke-calendar-xGridColor: #f5f5f5;
+$jke-calendar-yGridColor: #ccc;
+
+@import "../../../../bower_components/jke-d3-calendar/src/scss/jke-d3-calendar";
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
