@@ -4,7 +4,7 @@ This is the presentation files and demos for the presentation **Better and more 
 
 ## Abstract
 
-Have you ever built an application where 99% was of tables and forms? Have you ever felt that this is a little bit
+Have you ever built an application where 99% was tables and forms? Have you ever felt that this is a little bit
 boring and wished that there was a more fun way to solve this?
 
 D3.js is a powerful JavaScript library to visualize and interact with data in a simple yet powerful way. In 10 minutes
@@ -14,7 +14,7 @@ your applications better and more fun to use.
 The final components are available as jQuery UI Widgets.
 
 * jke-d3-calendar – [github.com/joakimkemeny/jke.d3.calendar](https://github.com/joakimkemeny/jke.d3.calendar)
-* jke-d3-ecg– [github.com/joakimkemeny/jke.d3.ecg](https://github.com/joakimkemeny/jke.d3.ecg)
+* jke-d3-ecg – [github.com/joakimkemeny/jke.d3.ecg](https://github.com/joakimkemeny/jke.d3.ecg)
 
 ## Known issues
 

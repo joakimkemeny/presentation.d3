@@ -2,3 +2,7 @@ Presentation:
 	Här ligger de punkter som behöver åtgärdas som rör själva presentationen.
 
 	- Syntax highlighting har gått sönder och har därför inaktiverats temporärt.
+	- När man fixar det sista med kurvan så går den långsamt.
+	- Anteckningarna går sönder vid kalendern.
+	- Koden för kalendern behöver göras om till snippets.
+	- 

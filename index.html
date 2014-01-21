@@ -145,7 +145,7 @@
 
 		<div id="demo-ecg-live" class="step invisible" data-x="1730" data-y="210">
 			<div class="ecg-preview">
-				<div id="ecg-chart"></div>
+				<div id="ecg"></div>
 			</div>
 			<div class="ecg-editor">
 				<div class="code">
@@ -298,6 +298,8 @@
 
 			<div class="notes">
 				<p>
+					Det här var två exempel som, i en rasande fart, visade vad man kan göra med D3 men vad kan man
+					göra mer?
 				</p>
 			</div>
 		</div>
@@ -307,9 +309,19 @@
 				<div class="box ballon ballon-down ballon1">Charts</div>
 				<div class="box ballon ballon-up ballon2">Maps</div>
 			</div>
+			<p class="links">Ready to go charts for D3 <a href="http://nvd3.org">nvd3.org</a>.</p>
 
 			<div class="notes">
 				<p>
+					Det första och mest uppenbara är att man kan skapa alla möjliga typer av diagram. Det finns massor
+					av exempel på deras hemsida och det finns versioner som kan zooma och panorera t.ex. Däremot är
+					det inte ett bibliotek för att slänga upp ett diagram lite snabbt eftersom det man får göra
+					väldigt mycket själv. Därför finns det flera bibliotek som bygger på D3 för att hjälpa till lite.
+					Ni ser ett exempel nedan.
+				</p>
+				<p>
+					Man lyfter även gärna fram att man kan använda D3 för att jobba med kartdata. Så det är ett
+					intressant användningsområde.
 				</p>
 			</div>
 		</div>
@@ -324,6 +336,15 @@
 
 			<div class="notes">
 				<p>
+					Men D3 är väldigt flexibelt och kan användas för att visualisera all möjlig data. Jag har använt
+					det för att visualeras en orderkö t.ex. för att se när det är mest korvstoppning i produktionen
+					under en dag. Där kunde man även flyta runt ordrarna genom att dra och släppa dem.
+				</p>
+				<p>
+					Och då börja man närma sig GUI-komponenter och kalendern som ni såg här är ju ytterligare ett
+					exempel. Jag har sett folk göra lite roligare date pickers t.ex. så det är egentligen bara
+					fantasin som sätter gräner och om ni vill se fler exempel så kolla på D3:s hemsida men det här var
+					allt som jag hade idag.
 				</p>
 			</div>
 		</div>
@@ -341,25 +362,19 @@
 
 			<div class="notes">
 				<p>
-					Hej igen och välkomna till min andra dragning här idag.
+					Ni hittar både presentationen och alla kod på Github. Båda dessa komponenter finns i lite mer
+					"riktiga" versioner som jQuery UI widgets som ni kan använda. De har kanske inte riktigt
+					produktionskvalitet än men ni är varmt välkomna att använda dem.
 				</p>
 				<p>
-					Ni som har varit här hela tiden idag såg mig ju prata om hur man kan tänka när man skapar en
-					arkitektur för sin moderna frontend tidigare och ni som var lite extra uppmärksamma kanske även
-					såg att jag i mina demos hade ett par komponenter som kanske inte är helt enkla att göra med vanlig
-					HTML och det är om dessa komponenter och hur jag gjorde för att bygga dem som jag har tänkt
-					prata nu.
-				</p>
-				<p>
-					Jag har valt att kalla den här dragningen "Bättre och roligare applikationer med D3.js" och min
-					förhoppning är att även om de komponenter som jag visar idag inte passar er så ska ni ändå bli
-					inspirerade till att titta närmare på hur D3 kan hjälpa era applikationer.
+					Jag hoppas ni tyckte det var intressant. Tack för mig.
 				</p>
 			</div>
 		</div>
+	</div>
 
-		<script src="js/libs.js"></script>
-		<script src="js/app.js"></script>
+	<script src="js/libs.js"></script>
+	<script src="js/app.js"></script>
 
 </body>
 </html>

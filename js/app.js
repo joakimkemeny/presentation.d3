@@ -255,7 +255,7 @@
 
 					return function () {
 						try {
-							document.getElementById('ecg-chart').innerHTML = '';
+							document.getElementById('ecg').innerHTML = '';
 							eval($(this).val());
 						} catch (error) {
 						}
