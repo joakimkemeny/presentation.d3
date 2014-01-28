@@ -1,5 +1,5 @@
-/* global Rainbow, impress, impressConsole, moment */
-(function ($, Rainbow, impress, impressConsole, moment) {
+/* global impress, impressConsole, moment */
+(function ($, impress, impressConsole, moment) {
 	'use strict';
 
 	var Presentation = {
@@ -30,33 +30,6 @@
 			browser.append('<iframe src="' + src + '" frameborder="0"></iframe>');
 
 			step.data('demo-loaded', true);
-		},
-
-		/**
-		 * Loads the source code for the current step.
-		 */
-		loadSrc: function (step) {
-
-			if (step.data('src-loaded')) {
-				return;
-			}
-
-			$('code[data-src]', step).each(function (index, element) {
-				var $element = $(element);
-				var srcUrl = $element.data('src');
-				var srcLang = $element.data('language');
-				$.get(srcUrl, function (data) {
-					if (srcLang === 'text' || srcLang === '') {
-						$element.append(data);
-					} else {
-						Rainbow.color(data, srcLang, function (highlighted) {
-							$element.append(highlighted);
-						});
-					}
-				}, 'text');
-			});
-
-			step.data('src-loaded', true);
 		},
 
 		loadCalendarEditor: function (step) {
@@ -299,7 +272,6 @@
 	$(function () {
 
 		$('.step').on('impress:stepenter', function () {
-			Presentation.loadSrc($(this));
 			Presentation.loadDemo($(this));
 			Presentation.loadCalendarEditor($(this));
 			Presentation.loadEcgEditor($(this));
@@ -311,4 +283,4 @@
 		impressConsole().init('css/console.css');
 	});
 
-}($, Rainbow, impress, impressConsole, moment));
+}($, impress, impressConsole, moment));

@@ -52,15 +52,8 @@ module.exports = function (grunt) {
 					'bower_components/jquery/jquery.min.js',
 					'bower_components/impress.js/js/impress.js',
 					'bower_components/moment/min/moment.min.js',
-					'bower_components/rainbow/js/rainbow.js',
-					'bower_components/rainbow/js/language/c.js',
-					'bower_components/rainbow/js/language/coffeescript.js',
-					'bower_components/rainbow/js/language/css.js',
-					'bower_components/rainbow/js/language/generic.js',
-					'bower_components/rainbow/js/language/html.js',
-					'bower_components/rainbow/js/language/java.js',
-					'bower_components/rainbow/js/language/javascript.js',
 					'bower_components/d3/d3.min.js',
+					'bower_components/prism/prism.js',
 					'lib/impress.console.js'
 				],
 				dest: 'js/libs.js'

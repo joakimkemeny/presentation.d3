@@ -300,7 +300,7 @@ h4, h5, h6 {
 			border-bottom: 5px solid transparentize($boxBorderColor, 0.5);
 			list-style: none;
 			margin: 0;
-			float:left;
+			float: left;
 			padding: 10px 20px;
 			text-align: center;
 
@@ -430,61 +430,137 @@ code {
 	line-height: 1.2em;
 }
 
-pre {
-	margin: 0 0 40px 0;
+pre[class*="language-"] {
+	background-color: transparent !important;
+	margin: 0 0 40px 0 !important;
 	padding: 20px;
-	word-wrap: break-word;
+	white-space: nowrap;
+	overflow: hidden !important;
+}
 
-	.comment {
-		color: #998;
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	//font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
 	}
-	.support {
-		color: #0086b3;
-	}
-	.tag,
-	.tag-name {
-		color: navy;
-	}
-	.keyword,
-	.css-property,
-	.vendor-prefix,
-	.sass,
-	.class,
-	.id,
-	.css-value,
-	.entity.function,
-	.storage.function {
-		font-weight: bold;
-	}
-	.css-property,
-	.css-value,
-	.vendor-prefix,
-	.support.namespace {
-		color: $textColor;
-	}
-	.constant.numeric,
-	.keyword.unit,
-	.hex-color {
-		color: #099;
-		font-weight: normal;
-	}
-	.entity.class {
-		color: #458;
-	}
-	.entity.id,
-	.entity.function {
-		color: #900;
-	}
-	.attribute,
-	.variable {
-		color: teal;
-	}
-	.string,
-	.support.value {
-		font-weight: normal;
-		color: #d14;
-	}
-	.regexp {
-		color: #009926;
-	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.builtin {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #a67f59;
+	background: hsla(0,0%,100%,.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
 }

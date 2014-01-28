@@ -58,4 +58,4 @@ I use the work of great people to create this presentation. Thanks to you all.
 * Bartek Szopka ([impress.js](http://bartaz.github.com/impress.js))
 * Mike Bostock ([D3.js](http://http://d3js.org))
 * John Resig ([jQuery](http://jquery.com))
-* Craig Campbell ([Rainbow](http://rainbowco.de))
+* Lea Verou ([Prism](http://prismjs.com))
