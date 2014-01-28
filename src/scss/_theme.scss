@@ -432,10 +432,17 @@ code {
 
 pre[class*="language-"] {
 	background-color: transparent !important;
-	margin: 0 0 40px 0 !important;
+	margin: 0 0 0 0 !important;
 	padding: 20px;
 	white-space: nowrap;
 	overflow: hidden !important;
+}
+
+pre[contenteditable] {
+	outline: none;
+	font-family: 'Bitstream Vera Sans Mono', Courier, monospace !important;
+	font-size: 22px !important;
+	line-height: 1.2em !important;
 }
 
 

@@ -1,5 +1,5 @@
-/* global impress, impressConsole, moment */
-(function ($, impress, impressConsole, moment) {
+/* global impress, impressConsole, moment, Prism, bililiteRange */
+(function ($, impress, impressConsole, moment, Prism, bililiteRange) {
 	'use strict';
 
 	var Presentation = {
@@ -115,10 +115,10 @@
 						}
 					};
 
-					return function () {
+					return function (source) {
 						try {
 							document.getElementById('calendar').innerHTML = '';
-							eval($(this).val());
+							eval(source);
 						} catch (error) {
 						}
 					};
@@ -129,7 +129,7 @@
 					e.stopPropagation();
 					e.preventDefault();
 				});
-				textarea.on('keyup', executeScript);
+				bililiteRange.fancyText(textarea[0], Prism.highlightElement, 100, executeScript);
 			});
 		},
 
@@ -250,10 +250,10 @@
 						{ x: 1390201141684, y: -0.0000562744140625 }
 					];
 
-					return function () {
+					return function (source) {
 						try {
 							document.getElementById('ecg').innerHTML = '';
-							eval($(this).val());
+							eval(source);
 						} catch (error) {
 						}
 					};
@@ -264,7 +264,7 @@
 					e.stopPropagation();
 					e.preventDefault();
 				});
-				textarea.on('keyup', executeScript);
+				bililiteRange.fancyText(textarea[0], Prism.highlightElement, 100, executeScript);
 			});
 		}
 	};
@@ -283,4 +283,4 @@
 		impressConsole().init('css/console.css');
 	});
 
-}($, impress, impressConsole, moment));
+}($, impress, impressConsole, moment, Prism, bililiteRange));

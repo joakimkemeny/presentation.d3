@@ -54,6 +54,8 @@ module.exports = function (grunt) {
 					'bower_components/moment/min/moment.min.js',
 					'bower_components/d3/d3.min.js',
 					'bower_components/prism/prism.js',
+					'lib/bililiteRange.js',
+					'lib/bililiteRange.fancyText.js',
 					'lib/impress.console.js'
 				],
 				dest: 'js/libs.js'
