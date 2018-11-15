@@ -1,3 +1,7 @@
+### _This repository is deprecated and archived_
+
+---
+
 # Presentation.D3
 
 This is the presentation files and demos for the presentation **Better and more fun applications with D3.js**
